@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+       label 'centos8'
+    }
 
     stages {
         stage('Hello') {
@@ -9,3 +11,4 @@ pipeline {
         }
     }
 }
+
