@@ -8,7 +8,7 @@ pipeline {
 		}
                 stage('sample') {
                   steps {
-                     sh  'ansible-playbook sample.yml -e DATE=date -e ECHO=echo -e ROLE_NAME=frontend' 
+                     sh  'ansible-playbook /home/centos/jenkins/lab-ansible/sample.yml -e DATE=date -e ECHO=echo -e ROLE_NAME=frontend' 
                   }
                 }
 
