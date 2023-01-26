@@ -1,0 +1,31 @@
+
+- name: test
+  hosts: localhost
+  become: true
+  tasks:
+  - name: maven build
+    ansible.builtin.shell: "{{DATE}}"
+    register: out
+
+  - name: print date
+    ansible.builtin.debug:
+     msg: "{{ECHO}} {{out.stdout}}"
+
+
+  - name: systemd
+    ansible.builtin.yum:
+     name: nginx
+     state: installed
+
+  roles: 
+  - "{{ROLE_NAME}}"
+
+
+
+            
+
+
+
+
+
+ 
