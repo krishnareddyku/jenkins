@@ -13,4 +13,16 @@ pipeline {
                 }
 
 	}
+	
+
+	post {
+	  always {
+	    echo "send mail"
+	  }
+	}
+
+          changed {
+            echo "changed from last to present"
+          }
+        }
 }
