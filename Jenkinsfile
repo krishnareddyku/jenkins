@@ -23,5 +23,5 @@ pipeline {
           changed {
             echo "changed from last to present"
           }
-       }
+       
 }
