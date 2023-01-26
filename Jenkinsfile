@@ -14,7 +14,6 @@ pipeline {
 
 	}
 	
-
 	post {
 	  always {
 	    echo "send mail"
@@ -24,5 +23,5 @@ pipeline {
           changed {
             echo "changed from last to present"
           }
-        }
+       }
 }
