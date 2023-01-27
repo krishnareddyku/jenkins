@@ -1,6 +1,6 @@
  community.general.jenkins_job:
    config: "{{ lookup('template', 'template/job.xml) }}"
    name: "{{item.dir}}/{{item.name}}"
-   url: "{{jenkins_url}}"
+   url: http://34.204.76.187:8080
    user: admin
    password: "{{jenkins_password}}"
