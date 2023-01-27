@@ -5,9 +5,7 @@
     url: http://34.204.76.187:8080
     user: admin
     password: "{{jenkins_password}}"
-    environment:
-      PYTHONPATH: "/usr/lib/python3.6/site-packages"
-  loop:
+    loop:
     - CIPipelines
 
 - name: create pipeline jobs
