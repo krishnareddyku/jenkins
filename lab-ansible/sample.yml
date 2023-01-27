@@ -2,10 +2,12 @@
 - name: test
   hosts: localhost
   become: true
-  tasks:
-  - name: maven build
-    ansible.builtin.shell: "{{DATE}}"
-    register: out
+  roles:
+  - "{{ROLE_NAME}}"
+#  tasks:
+#  - name: maven build
+#    ansible.builtin.shell: "{{DATE}}"
+#    register: out
 #
 #  - name: print date
 #    ansible.builtin.debug:
@@ -17,8 +19,8 @@
 #     name: nginx
 #     state: installed
 
-  roles: 
-  - "{{ROLE_NAME}}"
+#   roles:
+#  - "{{ROLE_NAME}}"
 
 
 
