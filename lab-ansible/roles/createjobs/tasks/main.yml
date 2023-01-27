@@ -1,4 +1,6 @@
-  sys.path.append('/usr/local/lib/python3.9')
+- name: add python-jenkins library to sys.path
+  command: python -c "import sys; sys.path.append('/usr/local/lib/python3.9')"
+
 - name: create folder
   community.general.jenkins_job:
     config: "{{ lookup('file', 'templates/folder.xml') }}"
