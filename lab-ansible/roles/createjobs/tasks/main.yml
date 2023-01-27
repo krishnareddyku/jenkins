@@ -1,3 +1,4 @@
+  sys.path.append('/usr/local/lib/python3.9')
 - name: create folder
   community.general.jenkins_job:
     config: "{{ lookup('file', 'templates/folder.xml') }}"
