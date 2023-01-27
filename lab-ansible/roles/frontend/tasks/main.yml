@@ -1,0 +1,14 @@
+- name: Display Froots
+  ansible.builtin.debug:
+   msg: " froot name is {{item}}"
+  loop: 
+   - apple
+   - banana
+
+- name: Display Froots
+  ansible.builtin.debug:
+   msg: " froot name is {{item.name}} and value is {{item.value}}"
+  loop:
+  - {name: appale, value: 10}
+  - {name: banana, value: 20}  
+  

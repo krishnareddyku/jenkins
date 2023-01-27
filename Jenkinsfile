@@ -1,14 +1,25 @@
 pipeline {
-    agent {
-       label 'centos8'
-    }
+	agent any
+	stages {
+		stage('helo') {
+		  steps {
+			echo "haloo world"
+		  }
+		}
+                stage('sample') {
+                  steps {
+                     sh  'ansible-playbook /home/centos/jenkins/lab-ansible/sample.yml -e DATE=date -e ECHO=echo -e ROLE_NAME=frontend' 
+                  }
+                }
 
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
+	}
+	
+	post {
+	  always {
+	    echo "send mail"
+	  }
+          changed {
+            echo "changed from last to present"
+          }
         }
-    }
 }
-
