@@ -6,9 +6,9 @@
     user: admin
     password: "{{jenkins_password}}"
   loop:
-      - CIPipeline
+  - CIPipelines
 
 - name: create pipeline jobs
   ansible.builtin.include_tasks: pipeline.yml
   loop:
-    - "{{pipelinejobs}}"
+  - "{{pipelinejobs}}"
