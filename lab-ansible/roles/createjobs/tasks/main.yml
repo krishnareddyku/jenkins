@@ -1,0 +1,20 @@
+  community.general.jenkins_job:
+    config: "{{ lookup('file', 'templates/job.xml') }}"
+    name: "{{item}}"
+    url: "{{jenkins_url}}"
+    usommunity.general.jenkins_job:
+      config: "{{ lookup('file', 'templates/job.xml') }}"
+      er: admin
+    password: "{{jenkins_password}}"
+  loop:
+    - CIPipelines
+
+- name: create pipeline jobs
+  ansible.builtin.include_tasks: pipeline.yml
+  loop:
+    - {name: "frontend", dir: "CIPipelines"}
+    - {name: "cart", dir: "CIPipelines"}
+    - {name: "catalogue", dir: "CIPipelines"}
+    - {name: "user", dir: "CIPipelines"}
+    - {name: "payment", dir: "CIPipelines"}
+    - {name: "shipping", dir: "CIPipelines"}
